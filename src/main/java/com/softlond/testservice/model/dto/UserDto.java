@@ -1,13 +1,21 @@
 package com.softlond.testservice.model.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class UserDto {
 	
+	@NotBlank(message = "Name is required.")
 	private String name;
+	
+	@NotNull(message = "LastName is required.")
 	private String lastName;
+	
+	@NotBlank(message = "DirectionOfHouse is required.")
 	private String directionOfHouse;
 	
 	public UserDto() {}
