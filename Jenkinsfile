@@ -11,7 +11,7 @@ node {
       
       //Build project and export jacoco reports.
       stage("Build Project") {
-        sh "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package"
+        sh "mvn clean package"
       }
           
       //Deploy in SonarQube.
