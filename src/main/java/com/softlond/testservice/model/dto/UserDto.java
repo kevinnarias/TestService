@@ -2,6 +2,7 @@ package com.softlond.testservice.model.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -16,6 +17,7 @@ public class UserDto {
 	private String lastName;
 	
 	@NotBlank(message = "DirectionOfHouse is required.")
+	@Size(min=10, max=30, message="Size should be between {min} and {max}.")
 	private String directionOfHouse;
 	
 	public UserDto() {}
