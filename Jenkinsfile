@@ -16,7 +16,7 @@ node {
           
       //Deploy in SonarQube.
       stage("Code Quality Analysis") {
-        withSonarQubeEnv(credentialsId: 'sonar') {
+        withSonarQubeEnv() {
           bat "mvn sonar:sonar"
         }
       }
