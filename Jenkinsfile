@@ -9,9 +9,6 @@ def projectProperties = [
 properties(projectProperties) 
 
 node {
-  ws("workspace/${env.JOB_NAME}/${env.BRANCH_NAME}") {
-    try {
-
       // Notify, new build started!
       stage("Build Started") {
       }
@@ -46,9 +43,5 @@ node {
       stage("Build Succeed") {
       }
 
-    } catch(err) {
-      currentBuild.result = 'FAILURE'
-	    throw err
-    }
-  }
+  
 }
