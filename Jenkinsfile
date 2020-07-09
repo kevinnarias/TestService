@@ -1,13 +1,5 @@
 #!/usr/bin/env groovy 
 
-/* Only keep the 2 most recent builds. */ 
-def projectProperties = [
-  buildDiscarder(logRotator(numToKeepStr: '2')),
-  disableConcurrentBuilds(),
-] 
-
-properties(projectProperties) 
-
 node {
       // Notify, new build started!
       stage("Build Started") {
@@ -32,6 +24,5 @@ node {
       // Notify, new build started!
       stage("Build Succeed") {
       }
-
   
 }
