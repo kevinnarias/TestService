@@ -11,7 +11,7 @@ node {
       
       //Build project and export jacoco reports.
       stage("Build Project") {
-        bat "mvn clean package"
+        bat "mvn clean verify package"
       }
           
       //Deploy in SonarQube.
