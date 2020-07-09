@@ -16,16 +16,6 @@ node {
 	    stage("Checkout") {
         checkout scm
       }
-	    
-      //Prepara el servicio
-	    stage("Prepare") {
-	  	  def pom = readMavenPom file: 'pom.xml'
-		    PROJECT_ARTIFACT_ID = pom.artifactId
-		    PROJECT_VERSION = pom.version
-	
-        def mvnHome = tool 'Maven-3.6.1'
-        env.PATH = "${mvnHome}/bin:${env.PATH}"
-	    }
       
       //Build project and export jacoco reports.
       stage("Build Project") {
