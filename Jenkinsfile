@@ -11,13 +11,13 @@ node {
       
       //Build project and export jacoco reports.
       stage("Build Project") {
-        sh "mvn clean package"
+        bat "mvn clean package"
       }
           
       //Deploy in SonarQube.
       stage("Code Quality Analysis") {
         withSonarQubeEnv(credentialsId: 'sonar') {
-          sh "mvn sonar:sonar"
+          bat "mvn sonar:sonar"
         }
       }
 
